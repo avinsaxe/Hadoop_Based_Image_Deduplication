@@ -1,0 +1,9 @@
+pip install -r installations
+
+
+duplicate_search -db default
+duplicate_search -add /home/avinsaxe/Pictures
+duplicate_search -show
+duplicate_search -delete key value
+
+duplicate_search -remove ~/Pictures
