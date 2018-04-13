@@ -13,6 +13,7 @@ from org.tamu.duplicate.startup import Constants
 import Constants
 import imagehash
 import magic
+from pprint import pprint
 
 
 
@@ -28,7 +29,7 @@ class Finder:
         else:
             self.images=DBConnection.connect_db(db_path)
 
-        print self.images
+        pprint (self.images)
 
 
     def execute(self,command=""):
@@ -42,19 +43,30 @@ class Finder:
                     self.setup_db("")
                 else:
                     self.setup_db(db_path)
-            elif len(command_list)==3 and command_list[1]=="-add":
-                folder_path=command_list[2]
-                if folder_path=="":
-                    print "Empty folder"
-                    return
-                else:
-                    self.add_folder_path(folder_path)
+            elif len(command_list)==3:
+                if command_list[1]=="-add":
+                    folder_path=command_list[2]
+                    if folder_path=="":
+                        print "Empty folder"
+                        return
+                    else:
+                        self.add_folder_path(folder_path)
+                elif command_list[1]=="-remove":
+                    folder_path=command_list[2]
+                    if folder_path=="":
+                        print "Empty folder"
+                        return
+                    else:
+                        self.remove_images_from_path(folder_path)
             elif len(command_list)==2 and command_list[1]=="-show":
                 self.show()
             elif len(command_list)==4 and command_list[1]=="-delete":
                 delete_key=command_list[2]
                 delete_value=command_list[3]
                 self.delete(delete_key,delete_value)
+            elif len(command_list)==3 and command_list[1]=="-db" and command_list[2]=="reset":
+                self.reset_database()
+
 
     def add_image_to_database_with_hash(self,file, hashes, size_on_disk, size, timestamp):
         if self.images==None:
@@ -67,8 +79,11 @@ class Finder:
 
     def show(self):
         print "In show"
+        if self.images==None:
+            print "Empty"
+            return
         total = self.images.count()
-        print(list(self.images.find()))
+        pprint(list(self.images.find()))
         print("Total: {}".format(total))
 
     def delete(self,key="*",value="**"):
@@ -103,15 +118,18 @@ class Finder:
     def remove_image_from_db(self,file):  #here file is the id of the file
         self.delete("_id",file)
 
-    def remove_images_from_path(self,paths):
-        for path in paths:
-            files = self.get_image_file_from_path(path)
-            for file in files:
-                self.remove_image_from_db(file, db)
+    def remove_images_from_path(self,path):
+        files = self.get_image_file_from_path(path)
+        for file in files:
+            self.remove_image_from_db(file)
+
     def is_in_db(self,file_id):
         if self.images.count({"_id":file_id})>0:
             return True
         return False
+
+    def reset_database(self):
+        self.images.drop()
 
     def get_list_new_files(self,files):
         print "get List new files ",files
@@ -177,10 +195,10 @@ class Finder:
         return time.time()
 
 
-    def add_folder_path(self,paths):
-        print "Paths ",paths
+    def add_folder_path(self,path):
+        print "Path ",path
 
-        files = self.get_image_file_from_path(paths)
+        files = self.get_image_file_from_path(path)
         new_files=self.get_list_new_files(files)
         print "New files ",new_files
         for file_ in new_files:

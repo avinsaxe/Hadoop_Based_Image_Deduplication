@@ -1,4 +1,8 @@
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
 pip install -r installations
+sudo service mongod start
+sudo service mongod stop
 
 
 duplicate_search -db default
@@ -6,4 +10,9 @@ duplicate_search -add /home/avinsaxe/Pictures
 duplicate_search -show
 duplicate_search -delete key value
 
-duplicate_search -remove ~/Pictures
+duplicate_search -delete _id id1
+
+
+duplicate_search -remove /home/avinsaxe/Pictures
+
+duplicate_search -db reset
