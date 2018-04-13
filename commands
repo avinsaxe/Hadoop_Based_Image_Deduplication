@@ -16,3 +16,11 @@ duplicate_search -delete _id id1
 duplicate_search -remove /home/avinsaxe/Pictures
 
 duplicate_search -db reset
+
+duplicate_search -find duplicates
+
+
+3b9b9430ec0c6f4d69615e59a5537a9491317e9a46a6c5e591ce3e654659c53ac33cf40c0fa6d4e9
+
+
+1b29d4926c944f6f69635e7987187686b15c5e87c6c1c53ab1837e38c61ec5c5c336f42c2d0dd4d3

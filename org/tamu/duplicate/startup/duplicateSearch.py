@@ -14,6 +14,7 @@ import Constants
 import imagehash
 import magic
 from pprint import pprint
+from org.tamu.duplicate.startup.Image_Processing import ImageProcessing
 
 
 
@@ -21,6 +22,7 @@ class Finder:
     def __init__(self):
         self.db_path=""
         self.images=None
+        self.img_processing=ImageProcessing()
 
     def setup_db(self,db_path):
         self.db_path=db_path
@@ -44,6 +46,10 @@ class Finder:
                 else:
                     self.setup_db(db_path)
             elif len(command_list)==3:
+                if command_list[1] == "-find":
+                    if command_list[2] == "duplicates":
+                        self.find_duplicates()
+
                 if command_list[1]=="-add":
                     folder_path=command_list[2]
                     if folder_path=="":
@@ -66,6 +72,15 @@ class Finder:
                 self.delete(delete_key,delete_value)
             elif len(command_list)==3 and command_list[1]=="-db" and command_list[2]=="reset":
                 self.reset_database()
+
+
+    def find_duplicates(self):
+        print "Identifying duplicates"
+        all_images=self.images.find()  #gives a list of maps in json format
+        for i in range(0,all_images.count()-1):
+            for j in range(i+1,all_images.count()):
+                print self.img_processing.are_images_similar(all_images[i]["hash"],all_images[j]["hash"])
+
 
 
     def add_image_to_database_with_hash(self,file, hashes, size_on_disk, size, timestamp):
@@ -95,14 +110,7 @@ class Finder:
             return False
 
 
-    def is_image(self,file_name):
-        supported = ['jp2', 'jpeg', 'gif', 'png','pcx', 'tiff', 'x-ms-bmp', 'x-portable-pixmap', 'x-xbitmap']
-        try:
-            mime = magic.from_file(file_name, mime=True)
-            mime.rsplit('/', 1)[1] in supported
-            return True
-        except IndexError:
-            return False
+
 
     def get_image_file_from_path(self,path):
         path = os.path.abspath(path)
@@ -111,7 +119,7 @@ class Finder:
         for root, dirs, files in os.walk(path):
             for file in files:
                 file = os.path.join(root, file)
-                if self.is_image(file):
+                if self.img_processing.is_image(file):
                     images.append(file)
         return images
 
@@ -142,42 +150,6 @@ class Finder:
         return new_list
 
 
-    def hash_file(self,file):
-        hashes = []
-        print "Image file ",file
-        try:
-            curr_image = Image.open(file)
-
-            # 0 degree hash
-            hashes.append(str(imagehash.phash(curr_image)))
-
-            # 90 degree hash
-            curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
-
-            # 180 degree hash
-            curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
-
-            # 270 degree hash
-            curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
-
-            # flip and hash
-            rotated_image = curr_image.transpose(Image.FLIP_LEFT_RIGHT)
-            hashes.append(str(imagehash.phash(rotated_image)))
-
-            hashes = ''.join(sorted(hashes))
-
-            size_on_disk = self.get_file_size(curr_image)
-            size = self.get_image_dim(curr_image)
-            timestamp = self.get_timestamp(curr_image)
-
-            return file, hashes, size_on_disk, size, timestamp
-
-        except OSError:
-            print "Unable to open ",file
-            return None
 
     def get_file_size(self,file_name):
         try:
@@ -202,7 +174,7 @@ class Finder:
         new_files=self.get_list_new_files(files)
         print "New files ",new_files
         for file_ in new_files:
-            file, hashes, size_on_disk, size, timestamp = self.hash_file(file_)
+            file, hashes, size_on_disk, size, timestamp = self.img_processing.hash_file(file_)
             self.add_image_to_database_with_hash(file, hashes, size_on_disk, size, timestamp)
 
 
