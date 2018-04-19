@@ -13,10 +13,19 @@ import imagehash
 import magic
 from pprint import pprint
 from difflib import SequenceMatcher
+try:
+    # for Python2
+    from Tkinter import *
+except ImportError:
+    # for Python3
+    from tkinter import *
+from PIL import Image,ImageTk
 
 class ImageProcessing:
     def __init__(self):
-        self.similarity_threshold=0.8
+        self.similarity_threshold=0.4
+        self.root= Tk()
+        self.root.title("Image UI")
 
     def get_image_dim(self,img):
         return "{} x {}".format(*img.size)
@@ -26,6 +35,14 @@ class ImageProcessing:
             return os.path.getsize(file_name)
         except:
             return 0
+
+    def display_image(self,path):
+        im = Image.open(path)  # This is the correct location and spelling for my image location
+        photo = ImageTk.PhotoImage(im)
+        cv = Canvas()
+        cv.pack(side='top', fill='both', expand='yes')
+        cv.create_image(10, 10, image=photo, anchor='nw')
+        mainloop()
 
     def get_timestamp(self, img):
         # tags = EXIF.process_file(img, stop_tag="EXIF DateTimeOriginal")

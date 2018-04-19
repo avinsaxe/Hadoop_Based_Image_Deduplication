@@ -1,4 +1,5 @@
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+sudo apt-get install python-tk
 
 pip install -r installations
 sudo service mongod start

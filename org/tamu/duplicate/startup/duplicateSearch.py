@@ -79,7 +79,11 @@ class Finder:
         all_images=self.images.find()  #gives a list of maps in json format
         for i in range(0,all_images.count()-1):
             for j in range(i+1,all_images.count()):
-                print self.img_processing.are_images_similar(all_images[i]["hash"],all_images[j]["hash"])
+                print all_images[i]["_id"], "  and  ", all_images[j]["_id"]
+                isSimilar=self.img_processing.are_images_similar(all_images[i]["hash"],all_images[j]["hash"])
+                if isSimilar==True:
+                    self.img_processing.display_image(all_images[i]["_id"])
+                    self.img_processing.display_image(all_images[j]["_id"])
 
 
 
