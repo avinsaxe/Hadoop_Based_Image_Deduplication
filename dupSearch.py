@@ -15,6 +15,7 @@ import magic
 from pprint import pprint
 from Image_Processing import ImageProcessing
 from OutputCreator import *
+from bson import json_util
 
 
 class Finder:
@@ -43,6 +44,22 @@ class Finder:
             hashes.append(all_images[i]["hash"])
         self.output.write_hashes(hashes)
 
+    def add_profiles_to_file(self):
+        return
+        # if self.images == None:
+        #     return
+        # all_images = self.images.find()
+        # li=list(all_images)
+        # data={}
+        # data['root']=[]
+        # print li
+        # for i in range(0,len(li)):
+        #     print li[i]
+        #     data["root"].append(li[i])
+        #
+        # #json_data=json.dumps(li, default=json_util.default)
+        # self.output.write_json(data)
+
     def execute(self,command=""):
         if command=="":
             return
@@ -59,6 +76,10 @@ class Finder:
             elif len(command_list)==3:
                 if command_list[1]=="-add" and command_list[2]=="hashes_to_output":
                     self.add_hashes_to_file()
+
+                    # duplicate_search -add profiles_to_output
+                elif command_list[1] == "-add" and command_list[2] == "profiles_to_output":
+                    self.add_profiles_to_file()
                 elif command_list[1] == "-find":
                     if command_list[2] == "duplicates":
                         self.find_duplicates()

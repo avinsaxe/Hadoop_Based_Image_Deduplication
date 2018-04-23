@@ -40,5 +40,19 @@ class OuputCreator:
         self.hash_file.close()
 
 
+    def write_json(self,jsonData="",mode="w+"):
+        if jsonData=="":
+            return
+
+        try:
+            self.image_profile_file = open(self.image_profiles, mode)
+        except:
+            print "Error opening file ", self.image_profiles
+
+        json.dump(jsonData,self.image_profile_file)
+        #self.image_profile_file.write(jsonData)
+
+
+
 
 
