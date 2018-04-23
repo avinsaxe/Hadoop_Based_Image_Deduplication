@@ -1,3 +1,5 @@
+#!/bin/bash
+hadoop fs -rm -r /user/cloudera/wordcount/output 
 hadoop fs -mkdir -p /user/cloudera/wordcount /user/cloudera/wordcount/input
 echo "Hadoop is an elephant" > file0
 echo "Hadoop is as yellow as can be" > file1
