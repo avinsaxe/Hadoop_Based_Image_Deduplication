@@ -9,13 +9,12 @@ from more_itertools import chunked
 from PIL import Image, ExifTags
 import pymongo
 import DBConnection
-from org.tamu.duplicate.startup import Constants
 import Constants
 import imagehash
 import magic
 from pprint import pprint
-from org.tamu.duplicate.startup.Image_Processing import ImageProcessing
-
+from Image_Processing import ImageProcessing
+from OutputCreator import *
 
 
 class Finder:
@@ -23,22 +22,34 @@ class Finder:
         self.db_path=""
         self.images=None
         self.img_processing=ImageProcessing()
+        self.output=OuputCreator()
 
     def setup_db(self,db_path):
         self.db_path=db_path
         if db_path=="":
-            self.images=DBConnection.connect()
+            self.images= DBConnection.connect()
         else:
-            self.images=DBConnection.connect_db(db_path)
+            self.images= DBConnection.connect_db(db_path)
 
         pprint (self.images)
 
+    def add_hashes_to_file(self):
+        if self.images==None:
+            return
+        all_images=self.images.find()
+        hashes=[]
+        print all_images[0]
+        for i in range(0,all_images.count()):
+            hashes.append(all_images[i]["hash"])
+        self.output.write_hashes(hashes)
 
     def execute(self,command=""):
         if command=="":
             return
         command_list=command.split(" ")
-        if len(command_list)>1 and command_list[0]==Constants.command_start:
+        if len(command_list)>1 and command_list[0]== Constants.command_start:
+            #duplicate_search -add hashes_to_output
+
             if len(command_list)==3 and command_list[1]=="-db":
                 db_path=command_list[2]
                 if db_path=="default":
@@ -46,11 +57,13 @@ class Finder:
                 else:
                     self.setup_db(db_path)
             elif len(command_list)==3:
-                if command_list[1] == "-find":
+                if command_list[1]=="-add" and command_list[2]=="hashes_to_output":
+                    self.add_hashes_to_file()
+                elif command_list[1] == "-find":
                     if command_list[2] == "duplicates":
                         self.find_duplicates()
 
-                if command_list[1]=="-add":
+                elif command_list[1]=="-add":
                     folder_path=command_list[2]
                     if folder_path=="":
                         print "Empty folder"
@@ -79,11 +92,10 @@ class Finder:
         all_images=self.images.find()  #gives a list of maps in json format
         for i in range(0,all_images.count()-1):
             for j in range(i+1,all_images.count()):
-                print all_images[i]["_id"], "  and  ", all_images[j]["_id"]
+                #print all_images[i]["_id"], "  and  ", all_images[j]["_id"]
                 isSimilar=self.img_processing.are_images_similar(all_images[i]["hash"],all_images[j]["hash"])
                 if isSimilar==True:
-                    self.img_processing.display_image(all_images[i]["_id"])
-                    self.img_processing.display_image(all_images[j]["_id"])
+                    print all_images[i]," and ",all_images[j]," are similar "
 
 
 

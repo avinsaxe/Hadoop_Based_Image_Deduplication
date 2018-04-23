@@ -1,4 +1,7 @@
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+sudo service mongod start
+sudo service mongod stop
+
 sudo apt-get install python-tk
 
 pip install -r installations
@@ -19,6 +22,16 @@ duplicate_search -remove /home/avinsaxe/Pictures
 duplicate_search -db reset
 
 duplicate_search -find duplicates
+
+duplicate_search -add hashes_to_output
+
+
+
+duplicate_search -db default
+duplicate_search -add /home/avinsaxe/Pictures
+duplicate_search -add hashes_to_output
+
+
 
 
 3b9b9430ec0c6f4d69615e59a5537a9491317e9a46a6c5e591ce3e654659c53ac33cf40c0fa6d4e9

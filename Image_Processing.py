@@ -7,7 +7,6 @@ from more_itertools import chunked
 from PIL import Image, ExifTags
 import pymongo
 import DBConnection
-from org.tamu.duplicate.startup import Constants
 import Constants
 import imagehash
 import magic
