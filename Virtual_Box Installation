@@ -1,0 +1,100 @@
+ubuntu-14.04.5-desktop-amd64.iso
+3000-MB Ram. 20 GB VHdd
+
+Bridged Network Adapter
+
+username : hduser
+system_name  : hadoop-master hadoop-slave1 hadoop-slave2 ...
+password : nimda
+
+-------------------------------------------------------------------------
+# login, Ctrl+Alt+T
+
+sudo passwd
+nimda
+nimda
+
+su
+nimda
+cd
+
+# You should now be in the root@hadoop-master or root@hadoop-slave prompt
+
+# install openssh-server, openjdk and wget
+
+apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget git
+
+# install hadoop 2.7.2 from a fixed and woking repository 
+
+wget https://github.com/kiwenlau/compile-hadoop/releases/download/2.7.2/hadoop-2.7.2.tar.gz 
+
+tar -xzvf hadoop-2.7.2.tar.gz 
+mv hadoop-2.7.2 /usr/local/hadoop 
+rm hadoop-2.7.2.tar.gz
+
+# set environment variable
+echo 'export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64' >> ~/.bashrc &&
+echo 'export HADOOP_HOME=/usr/local/hadoop' >> ~/.bashrc 
+echo 'export PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin' >> ~/.bashrc 
+
+source ~/.bashrc
+
+# ssh without key
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+ifconfig 
+# ( Get IP addess of eth0 on all the systems )
+
+
+
+gedit /etc/hosts 
+# add the ip's of all virtualboxes
+
+10.222.194.234 hadoop-master
+10.224.193.223 hadoop-slave1
+10.224.193.225 hadoop-slave2
+
+gedit /etc/ssh/sshd_config 
+#Change Permit-root-login without-password to yes
+
+service sshd restart
+
+--------------------------------------------Recomended to restart system
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@hadoop-master
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@hadoop-slave1
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@hadoop-slave2
+
+mkdir -p ~/hdfs/namenode && mkdir -p ~/hdfs/datanode && mkdir $HADOOP_HOME/logs
+
+git clone https://github.tamu.edu/avinsaxe/CSCE689_Project2.git
+
+cd CSCE689_Project2/
+
+cp config/* /tmp/
+
+ mv /tmp/ssh_config ~/.ssh/config && \
+ mv /tmp/hadoop-env.sh /usr/local/hadoop/etc/hadoop/hadoop-env.sh && \
+ mv /tmp/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml && \ 
+ mv /tmp/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml && \
+ mv /tmp/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml && \
+ mv /tmp/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
+ mv /tmp/slaves $HADOOP_HOME/etc/hadoop/slaves && \
+ mv /tmp/start-hadoop.sh ~/start-hadoop.sh && \
+ mv /tmp/run-wordcount.sh ~/run-wordcount.sh
+
+ chmod +x ~/start-hadoop.sh && \
+ chmod +x ~/run-wordcount.sh && \
+ chmod +x $HADOOP_HOME/sbin/start-dfs.sh && \
+ chmod +x $HADOOP_HOME/sbin/start-yarn.sh 
+
+
+ON hadoop-master
+
+# format namenode
+/usr/local/hadoop/bin/hdfs namenode -format
+
+./start-hadoop.sh && ./run-wordcount.sh
+
+

@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3ba65a30-d0e1-4cd9-85eb-79790fc7ca3a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/OutputCreator.py" afterPath="$PROJECT_DIR$/OutputCreator.py" />
       <change beforePath="$PROJECT_DIR$/commands" afterPath="$PROJECT_DIR$/commands" />
-      <change beforePath="$PROJECT_DIR$/installations" afterPath="$PROJECT_DIR$/installations" />
-      <change beforePath="$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py" afterPath="$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py" />
-      <change beforePath="$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py" afterPath="$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py" />
+      <change beforePath="$PROJECT_DIR$/dupSearch.py" afterPath="$PROJECT_DIR$/dupSearch.py" />
+      <change beforePath="$PROJECT_DIR$/duplicateSearch.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/output/image_profiles.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="duplicateSearch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py">
+      <file leaf-file-name="commands" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commands">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="84" column="49" lean-forward="false" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
+            <state relative-caret-position="414">
+              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dupSearch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dupSearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-242">
+              <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
               <folding>
                 <element signature="e#8#17#0" expanded="true" />
               </folding>
@@ -29,41 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topology.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/topology.py">
+      <file leaf-file-name="Image_Processing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Image_Processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3582">
-              <caret line="205" column="43" lean-forward="false" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commands" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tkinter.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34218">
-              <caret line="1901" column="0" lean-forward="false" selection-start-line="1901" selection-start-column="0" selection-end-line="1901" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image_Processing.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -71,21 +52,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/PIL/Image.py">
+      <file leaf-file-name="OutputCreator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OutputCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45558">
-              <caret line="2535" column="0" lean-forward="false" selection-start-line="2535" selection-start-column="0" selection-end-line="2535" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="445">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/collection.py">
+      <file leaf-file-name="hashes.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/output/hashes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55116">
-              <caret line="3097" column="0" lean-forward="false" selection-start-line="3097" selection-start-column="0" selection-end-line="3097" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,23 +85,13 @@
         </entry>
       </file>
       <file leaf-file-name="DBConnection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
+        <entry file="file://$PROJECT_DIR$/DBConnection.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,13 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add_image_to_database_with_hash</find>
-      <find>add_image</find>
-      <find>hash_files_in_list</find>
-      <find>get_list_new_files</find>
-      <find>full_</find>
-      <find>EXIF</find>
-      <find>reset</find>
       <find>remove_images_from_pa</find>
       <find>remove_images_from_path</find>
       <find>get_ima</find>
@@ -160,6 +126,17 @@
       <find>root</find>
       <find>tk(</find>
       <find>self.T</find>
+      <find>are_images_similar</find>
+      <find>&quot;hash&quot;</find>
+      <find>all_images</find>
+      <find>len(a</find>
+      <find>count</find>
+      <find>duplicate_search</find>
+      <find>add_profiles_to_file</find>
+      <find>write_jso</find>
+      <find>json</find>
+      <find>{</find>
+      <find>]</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,9 +152,16 @@
         <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/DB_Constants.py" />
         <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py" />
         <option value="$PROJECT_DIR$/installations" />
-        <option value="$PROJECT_DIR$/commands" />
-        <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py" />
         <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py" />
+        <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py" />
+        <option value="$PROJECT_DIR$/org/tamu/duplicate/startup/OutputCreator.py" />
+        <option value="$PROJECT_DIR$/Image_Processing.py" />
+        <option value="$PROJECT_DIR$/output/hashes.txt" />
+        <option value="$PROJECT_DIR$/commands" />
+        <option value="$PROJECT_DIR$/duplicateSearch.py" />
+        <option value="$PROJECT_DIR$/OutputCreator.py" />
+        <option value="$PROJECT_DIR$/output/image_profiles.json" />
+        <option value="$PROJECT_DIR$/dupSearch.py" />
       </list>
     </option>
   </component>
@@ -213,28 +197,7 @@
             <path>
               <item name="Project2_Shared" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project2_Shared" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project2_Shared" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project2_Shared" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="tamu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project2_Shared" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project2_Shared" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="tamu" type="462c0819:PsiDirectoryNode" />
-              <item name="duplicate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project2_Shared" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project2_Shared" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="tamu" type="462c0819:PsiDirectoryNode" />
-              <item name="duplicate" type="462c0819:PsiDirectoryNode" />
-              <item name="startup" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,6 +208,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -258,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.duplicateSearch">
+  <component name="RunManager" selected="Python.dupSearch">
     <configuration name="Image_Processing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -271,7 +239,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project2_Shared" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Image_Processing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="dupSearch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project2_Shared" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dupSearch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,20 +275,22 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project2_Shared" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/duplicateSearch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.duplicateSearch" />
       <item index="1" class="java.lang.String" itemvalue="Python.Image_Processing" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dupSearch" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.duplicateSearch" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Image_Processing" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.dupSearch" />
+        <item index="1" class="java.lang.String" itemvalue="Python.duplicateSearch" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Image_Processing" />
       </list>
     </recent_temporary>
   </component>
@@ -324,10 +312,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5051213" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.4948787" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -340,7 +330,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -351,85 +340,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py</url>
+          <url>file://$PROJECT_DIR$/DBConnection.py</url>
           <line>13</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/OutputCreator.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55116">
-          <caret line="3097" column="0" lean-forward="false" selection-start-line="3097" selection-start-column="0" selection-end-line="3097" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/installations">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="49" lean-forward="true" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
-          <folding>
-            <element signature="e#8#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3582">
-          <caret line="205" column="43" lean-forward="false" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34218">
@@ -462,7 +386,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
+    <entry file="file://$PROJECT_DIR$/DBConnection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
@@ -472,7 +396,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
@@ -480,7 +404,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py">
+    <entry file="file://$PROJECT_DIR$/Image_Processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
@@ -490,13 +414,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py">
+    <entry file="file://$PROJECT_DIR$/duplicateSearch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="e#8#17#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
+    <entry file="file://$PROJECT_DIR$/DBConnection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
@@ -557,7 +479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
@@ -565,7 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py">
+    <entry file="file://$PROJECT_DIR$/Image_Processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -575,13 +497,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py">
+    <entry file="file://$PROJECT_DIR$/duplicateSearch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3168">
           <caret line="188" column="0" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-          <folding>
-            <element signature="e#8#17#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,7 +551,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
+    <entry file="file://$PROJECT_DIR$/DBConnection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
@@ -641,7 +561,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
@@ -711,7 +631,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/DBConnection.py">
+    <entry file="file://$PROJECT_DIR$/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBConnection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
@@ -721,10 +649,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Constants.py">
+    <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="887">
+          <caret line="1901" column="0" lean-forward="false" selection-start-line="1901" selection-start-column="0" selection-end-line="1901" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -737,18 +665,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
+    <entry file="file://$PROJECT_DIR$/output/map_file.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34218">
-          <caret line="1901" column="0" lean-forward="false" selection-start-line="1901" selection-start-column="0" selection-end-line="1901" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/duplicateSearch.py">
+    <entry file="file://$PROJECT_DIR$/output/map_file.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="49" lean-forward="false" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duplicateSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="71" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Image_Processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OutputCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="269" column="0" lean-forward="false" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/bson/json_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="856" column="0" lean-forward="false" selection-start-line="856" selection-start-column="0" selection-end-line="856" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/image_profiles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/hashes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dupSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-242">
+          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
           <folding>
             <element signature="e#8#17#0" expanded="true" />
           </folding>
@@ -757,19 +753,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="414">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org/tamu/duplicate/startup/Image_Processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
