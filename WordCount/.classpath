@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="/home/ritu/CSCE689_Project2/WordCount/lib/hadoop-common-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/ritu/CSCE689_Project2/WordCount/lib/hadoop-mapreduce-client-core-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/ritu/eclipse/Code/Cosine/lib/hadoop-core-1.2.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
