@@ -17,6 +17,10 @@ from Image_Processing import ImageProcessing
 from OutputCreator import *
 from bson import json_util
 
+from threading import Thread
+from time import sleep
+from Hadoop_Message_Parser import *
+
 
 class Finder:
     def __init__(self):
@@ -24,6 +28,7 @@ class Finder:
         self.images=None
         self.img_processing=ImageProcessing()
         self.output=OuputCreator()
+        self.hadoop_message_parser=Hadoop_Message_Parser()
 
     def setup_db(self,db_path):
         self.db_path=db_path
@@ -214,10 +219,15 @@ class Finder:
             file, hashes, size_on_disk, size, timestamp = self.img_processing.hash_file(file_)
             self.add_image_to_database_with_hash(file, hashes, size_on_disk, size, timestamp)
 
+    def __thread_poller__(self):
+        self.hadoop_message_parser.poll_continuously()
+
 def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
     finder=Finder()
+    thread = Thread(target=finder.__thread_poller__, args=())
+    thread.start()
     while True:
         cmd = raw_input("")
         if cmd == "-1":
@@ -226,8 +236,10 @@ def main():
             continue
         finder.execute(cmd)
 
-
+    thread.join()
+    print "Polling finished"
 
 
 if __name__=="__main__":
+
     main()
