@@ -8,6 +8,7 @@ class Hadoop_Message_Parser:
         self.hadoop_file_path=path
         self.interval=3
         self.prev_timestamp=-1
+        self.file=None
 
     def __get_last_update_timestamp__(self,path):
         if platform.system() == 'Windows':
@@ -23,6 +24,13 @@ class Hadoop_Message_Parser:
 
     def parse_hadoop_output_file(self):
         print "Parsing Hadoop Output File"
+        with open(self.hadoop_file_path) as fp:
+            line = fp.readline()
+            cnt = 1
+            while line:
+                print("Line {}: {}".format(cnt, line.strip()))
+                line = fp.readline()
+                cnt += 1
 
     def poll_continuously(self):
         while(True):
