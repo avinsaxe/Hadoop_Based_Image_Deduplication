@@ -23,12 +23,12 @@ class Hadoop_Message_Parser:
                 return stat.st_mtime
 
     def parse_hadoop_output_file(self):
-        print "Parsing Hadoop Output File"
+        print "\n\tParsing Hadoop Output File"
         with open(self.hadoop_file_path) as fp:
             line = fp.readline()
             cnt = 1
             while line:
-                print("Line {}: {}".format(cnt, line.strip()))
+                print "\t\t",line.strip()
                 line = fp.readline()
                 cnt += 1
 

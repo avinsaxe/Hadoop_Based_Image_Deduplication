@@ -30,6 +30,7 @@ class Finder:
         self.output=OuputCreator()
         self.hadoop_message_parser=Hadoop_Message_Parser()
 
+
     def setup_db(self,db_path):
         self.db_path=db_path
         if db_path=="":
@@ -222,21 +223,30 @@ class Finder:
     def __thread_poller__(self):
         self.hadoop_message_parser.poll_continuously()
 
+    def __thread_take_input__(self):
+        while True:
+            cmd = raw_input("")
+            if cmd == "-1":
+                break
+            if cmd == "" or len(cmd) == 0:
+                continue
+            self.execute(cmd)
+
+
 def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
-    finder=Finder()
-    thread = Thread(target=finder.__thread_poller__, args=())
-    thread.start()
-    while True:
-        cmd = raw_input("")
-        if cmd == "-1":
-            break
-        if cmd == "" or len(cmd) == 0:
-            continue
-        finder.execute(cmd)
+    finder = Finder()
 
-    thread.join()
+    thread1 = Thread(target=finder.__thread_poller__, args=())
+    thread1.start()
+
+    thread2 = Thread(target=finder.__thread_take_input__(), args=())
+    thread2.start()
+
+
+    thread1.join()
+    #thread2.join()
     print "Polling finished"
 
 
