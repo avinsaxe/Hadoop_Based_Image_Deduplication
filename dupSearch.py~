@@ -230,8 +230,6 @@ class Finder:
         files = self.get_image_file_from_path(path)
         new_files=self.get_list_new_files(files)
         print "New files ",new_files
-        if new_files==None:
-            return
         for file_ in new_files:
             file, hashes, size_on_disk, size, timestamp = self.img_processing.hash_file(file_)
             self.add_image_to_database_with_hash(file, hashes, size_on_disk, size, timestamp)
@@ -242,6 +240,7 @@ class Finder:
 
     def __thread_take_input__(self):
         while True:
+            time.sleep(3)
             cmd = raw_input("")
             if cmd == "-1":
                 break
@@ -266,15 +265,16 @@ def main():
     print "duplicate_search -db <path>\n\n"
     finder = Finder()
 
+    thread2 = threading.Thread(target=finder.__thread_take_input__())
 
-    #thread1 = threading.Thread(target=finder.__thread_poller__())
-    #thread2 = threading.Thread(target=finder.__thread_take_input__())
-    thread1 = Thread(target=finder.__thread_poller__, args=())
-    thread1.start()
-    thread2 = Thread(target=finder.__thread_take_input__(), args=())
-    thread2.start()
+    thread1 = threading.Thread(target=finder.__thread_poller__())
 
+    
+    #thread3 = threading.Thread(target=finder.__thread_display_output_console__())
+
+    thread2.join()
     thread1.join()
+    #thread3.join()
     print "Polling finished"
 
 
