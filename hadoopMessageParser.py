@@ -2,7 +2,12 @@ import time
 from threading import Thread
 import os
 import platform
+from Image_Processing import *
+from dupSearch import *
 import re
+
+
+#needs to be one object in main file, with reset of duplicate_hashes everytime the data is displayed
 
 class Hadoop_Message_Parser:
     def __init__(self,path="output/hadoop_output.txt"):
@@ -11,7 +16,11 @@ class Hadoop_Message_Parser:
         self.prev_timestamp=-1
         self.file=None
         self.duplicate_hashes=[]
+        self.image_processing=ImageProcessing()
+        self.repeat_images=[]
 
+
+    #href:: StackOverflow
     def __get_last_update_timestamp__(self,path):
         if platform.system() == 'Windows':
             return os.path.getctime(path)
@@ -20,8 +29,6 @@ class Hadoop_Message_Parser:
             try:
                 return stat.st_birthtime
             except AttributeError:
-                # We're probably on Linux. No easy way to get creation dates here,
-                # so we'll settle for when its content was last modified.
                 return stat.st_mtime
 
     def __duplicate_identified__(self,hash):
@@ -39,9 +46,18 @@ class Hadoop_Message_Parser:
                     continue
                 if int(line_split[1])>1:
                     self.__duplicate_identified__(line_split[0])
-
+        self.finder = Finder()
         print "Duplicate Hashes List ",self.duplicate_hashes
+        if self.duplicate_hashes!=None and len(self.duplicate_hashes)>0:
+            print "Duplicate Printing"
+            for i in range(0,len(self.duplicate_hashes)):
+                temp=self.finder.get_image_path_from_hash(self.duplicate_hashes[i])
+                self.repeat_images=self.repeat_images+temp
 
+
+            self.duplicate_hashes=[]  #reset the duplicate hashes
+        self.__thread_display_output_console__()
+        self.repeat_images=[]
 
 
 
@@ -51,6 +67,13 @@ class Hadoop_Message_Parser:
             splits = re.split(r'\s{1,}', l)
             splits = [i for i in splits if i != '']
             return splits
+
+    def __thread_display_output_console__(self):
+        print "Repeating "
+        if self.repeat_images!=None and len(self.repeat_images)>0:
+            print "Repeating Images "
+            for image in self.repeat_images:
+                print image["_id"]
 
 
     def poll_continuously(self):

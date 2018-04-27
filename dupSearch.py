@@ -19,7 +19,8 @@ from bson import json_util
 
 from threading import Thread
 from time import sleep
-from Hadoop_Message_Parser import *
+from hadoopMessageParser import *
+import threading
 
 
 class Finder:
@@ -28,8 +29,6 @@ class Finder:
         self.images=None
         self.img_processing=ImageProcessing()
         self.output=OuputCreator()
-        self.hadoop_message_parser=Hadoop_Message_Parser()
-
 
     def setup_db(self,db_path):
         self.db_path=db_path
@@ -39,6 +38,22 @@ class Finder:
             self.images= DBConnection.connect_db(db_path)
 
         pprint (self.images)
+
+    def get_image_path_from_hash(self,hash=""):
+        if self.images==None:
+            self.setup_db(self.db_path)
+        if hash=="" or self.images==None:
+            return None
+        all_images=self.images.find()
+        all_images_with_required_hash=[]
+        for image in all_images:
+            if image["hash"]==hash:
+                all_images_with_required_hash.append(image)
+
+        return all_images_with_required_hash
+
+
+
 
     def add_hashes_to_file(self):
         if self.images==None:
@@ -221,10 +236,12 @@ class Finder:
             self.add_image_to_database_with_hash(file, hashes, size_on_disk, size, timestamp)
 
     def __thread_poller__(self):
+        self.hadoop_message_parser = Hadoop_Message_Parser()
         self.hadoop_message_parser.poll_continuously()
 
     def __thread_take_input__(self):
         while True:
+            time.sleep(3)
             cmd = raw_input("")
             if cmd == "-1":
                 break
@@ -232,21 +249,33 @@ class Finder:
                 continue
             self.execute(cmd)
 
+    def __thread_display_output_console__(self):
+        self.hadoop_message_parser=Hadoop_Message_Parser()
+        while True:
+            time.sleep(10)
+            print "Repeating "
+            if self.hadoop_message_parser.repeat_images!=None and len(self.hadoop_message_parser.repeat_images)>0:
+                print "Repeating Images "
+                for image in self.hadoop_message_parser.repeat_images:
+                    print image["_id"]
+
+
 
 def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
     finder = Finder()
 
-    thread1 = Thread(target=finder.__thread_poller__, args=())
-    thread1.start()
 
-    thread2 = Thread(target=finder.__thread_take_input__(), args=())
-    thread2.start()
+    thread1 = threading.Thread(target=finder.__thread_poller__())
 
+    thread2 = threading.Thread(target=finder.__thread_take_input__())
 
+    #thread3 = threading.Thread(target=finder.__thread_display_output_console__())
+
+    thread2.join()
     thread1.join()
-    #thread2.join()
+    #thread3.join()
     print "Polling finished"
 
 
