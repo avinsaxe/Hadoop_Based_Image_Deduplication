@@ -214,10 +214,6 @@ class Finder:
             file, hashes, size_on_disk, size, timestamp = self.img_processing.hash_file(file_)
             self.add_image_to_database_with_hash(file, hashes, size_on_disk, size, timestamp)
 
-
-
-
-
 def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
