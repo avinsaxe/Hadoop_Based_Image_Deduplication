@@ -21,9 +21,15 @@ class Hadoop_Message_Parser:
                 # so we'll settle for when its content was last modified.
                 return stat.st_mtime
 
+    def parse_hadoop_output_file(self):
+        print "Parsing Hadoop Output File"
+
     def poll_continuously(self):
         while(True):
             print "Polling directory ",self.hadoop_file_path
 
             time.sleep(self.interval)
-            print self.__get_last_update_timestamp__(self.hadoop_file_path)
+            last_updated_timestamp= self.__get_last_update_timestamp__(self.hadoop_file_path)
+            if last_updated_timestamp>self.prev_timestamp:
+                self.prev_timestamp=last_updated_timestamp
+                self.parse_hadoop_output_file()
