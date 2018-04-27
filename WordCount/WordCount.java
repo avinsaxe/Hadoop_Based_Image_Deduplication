@@ -1,5 +1,3 @@
-package org.myorg;
-
 import java.io.IOException;
 import java.util.regex.Pattern;
 import org.apache.hadoop.conf.Configured;
@@ -15,11 +13,8 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 
-import org.apache.log4j.Logger;
-
 public class WordCount extends Configured implements Tool {
 
-  private static final Logger LOG = Logger.getLogger(WordCount.class);
 
   public static void main(String[] args) throws Exception {
     int res = ToolRunner.run(new WordCount(), args);
@@ -67,7 +62,8 @@ public class WordCount extends Configured implements Tool {
       for (IntWritable count : counts) {
         sum += count.get();
       }
-      context.write(word, new IntWritable(sum));
+      for(int i =0; i< sum; i++)
+    	  context.write(word, new IntWritable(sum));
     }
   }
 }
