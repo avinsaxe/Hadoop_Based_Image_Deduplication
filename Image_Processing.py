@@ -1,17 +1,17 @@
 import os
 import time
 from flask_cors import CORS
-import imagehash
 from jinja2 import FileSystemLoader, Environment
 from more_itertools import chunked
 from PIL import Image, ExifTags
 import pymongo
 import DBConnection
 import Constants
-import imagehash
 import magic
 from pprint import pprint
 from difflib import SequenceMatcher
+import sdhash
+
 try:
     # for Python2
     from Tkinter import *
@@ -61,23 +61,25 @@ class ImageProcessing:
     def hash_file(self,file):
         hashes = []
         print "Image file ",file
+        h = sdhash.Hash()
+
         try:
             curr_image = Image.open(file)
 
             # 0 degree hash
-            hashes.append(str(imagehash.phash(curr_image)))
+            hashes.append(str(h.hash_image(curr_image)))
 
             # 90 degree hash
             curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
+            hashes.append(str(h.hash_image(curr_image)))
 
             # 180 degree hash
             curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
+            hashes.append(str(h.hash_image(curr_image)))
 
             # 270 degree hash
             curr_image = curr_image.rotate(90, expand=True)
-            hashes.append(str(imagehash.phash(curr_image)))
+            hashes.append(str(h.hash_image(curr_image)))
 
             # flip and hash
             #rotated_image = curr_image.transpose(Image.FLIP_LEFT_RIGHT)

@@ -1,7 +1,7 @@
 import json
 import os
 class OuputCreator:
-    def __init__(self,map_file='/home/hduser/CloudProject/CSCE689_Project2/WordCount/new_data.txt',image_profiles='output/image_profiles.json'):
+    def __init__(self,map_file='/home/hduser/CloudComputing/CSCE689_Project2/WordCount/new_data.txt',image_profiles='output/image_profiles.json'):
         self.hashes=map_file
         self.image_profiles=image_profiles
         self.hash_file=None
@@ -24,6 +24,7 @@ class OuputCreator:
             self.hash_file=self._open_file(self.hashes,"a+")
 
         self.hash_file.write(hash)
+        self.hash_file.close()
 
     def write_hashes(self,hashes_data=[],mode="w+"):
         if hashes_data==None or len(hashes_data)==0:

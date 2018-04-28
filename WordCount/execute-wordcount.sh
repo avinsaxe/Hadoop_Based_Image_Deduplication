@@ -8,5 +8,5 @@ hadoop jar wordcount.jar org.myorg.WordCount /user/cloudera/wordcount/input /use
 #hadoop fs -cat /user/cloudera/wordcount/output/*
 rm temp.txt
 hadoop fs -copyToLocal /user/cloudera/wordcount/output/part-r-00000 temp.txt
-mv temp.txt /home/hduser/CloudProject/CSCE689_Project2/output/hadoop_output.txt
+mv temp.txt /home/hduser/CloudComputing/CSCE689_Project2/output/hadoop_output.txt
 rm temp.txt

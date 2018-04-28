@@ -1,13 +1,40 @@
+Hadoop:
+
+su
+password
+
+hdfs namenode -format
+cd
+./start-hadoop.sh
+
+hdfs dfsadmin -report
+
+
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 sudo service mongod start
 sudo service mongod stop
 
+ pip install pymongo
+pip install --upgrade setuptools
+
+
 sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+sudo apt-get install python3.6-dev libmysqlclient-dev
+sudo apt-get install libfreetype6-dev
 
 sudo apt-get install python-tk
 pip install -U flask-cors
 sudo python2 -m pip install python-magic
 sudo apt-get install python-imaging python-imaging-tk
+sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran
+apt-get install python-numpy
+pip install scikit-image
+sudo pip install scipy
+
+sudo pip install Pillow
+sudo pip install imagehash
+
+sudo pip install more_itertools
 
 pip install -r installations
 sudo service mongod start
@@ -41,6 +68,11 @@ duplicate_search -add hashes_to_output
 duplicate_search -add profiles_to_output
 duplicate_search -dump all
 
+
+
+To remove scipy
+
+sudo apt-get remove python-numpy
 
 
 
