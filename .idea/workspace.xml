@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ba65a30-d0e1-4cd9-85eb-79790fc7ca3a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageShow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OutputCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/OutputCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordCount/my_hadoop_data_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WordCount/my_hadoop_data_file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordCount/new_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WordCount/new_data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hadoopMessageParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/hadoopMessageParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/hadoop_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/hadoop_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
