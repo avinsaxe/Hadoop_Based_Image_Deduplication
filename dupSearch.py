@@ -21,13 +21,13 @@ from time import sleep
 from hadoopMessageParser import *
 import threading
 
-
 class Finder:
     def __init__(self):
         self.db_path=""
         self.images=None
         self.img_processing=ImageProcessing()
         self.output=OuputCreator()
+        self.duplicate_images=[]
 
     def setup_db(self,db_path):
         self.db_path=db_path
@@ -137,6 +137,8 @@ class Finder:
                 isSimilar=self.img_processing.are_images_similar(all_images[i]["hash"],all_images[j]["hash"])
                 if isSimilar==True:
                     print all_images[i]," and ",all_images[j]," are similar "
+                    self.duplicate_images.apend(all_images[i]["_id"])
+                    print self.duplicate_images
 
 
 
