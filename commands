@@ -68,6 +68,7 @@ python -m SimpleHTTPServer
 duplicate_search -delete key *
 duplicate_search -db default
 duplicate_search -add /home/hduser/Pictures
+duplicate_search -add /home/hduser/Pictures1
 duplicate_search -add hashes_to_output
 duplicate_search -add profiles_to_output
 duplicate_search -dump all

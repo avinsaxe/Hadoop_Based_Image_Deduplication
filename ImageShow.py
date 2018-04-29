@@ -57,6 +57,7 @@ class ImageShow:
         </script>
         </head>
         <body><h1>Duplicate Images. Pick and Delete </h1>"""+self.images_html_text+"""</body></html>"""
+        self.images_html_text=""
         f.write(message)
         f.close()
 
