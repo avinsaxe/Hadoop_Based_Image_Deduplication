@@ -1,5 +1,26 @@
 <html>
-        <head></head>
-        <body><p>Duplicate Images. Pick and Delete <p><img src='/home/hduser/Pictures/download-9.jpg
-' width="400" height="400"/><img src='/home/hduser/Pictures/vetstreet.brightspotcdn.com.jpeg
-' width="400" height="400"/></body></html>
+        <head>
+        
+        
+        <script>
+        
+           
+            function toCelsius(f) {
+               return (5/9) * (f-32);
+            }
+            function delete_file(file_name){
+                var r = confirm("Go to the path "+file_name +" and delete");
+                if(r == true)
+                {
+                   // FileInfo objFileInfo = new FileInfo(file_name);
+                   // if (objFileInfo.Exists)
+                    //{
+                     //   objFileInfo.Delete();
+                    //}
+                    
+                }
+            }
+
+        </script>
+        </head>
+        <body><h1>Duplicate Images. Pick and Delete </h1><a href="" ><img src='/home/hduser/Pictures/download-9.jpg' width="400" height="400"/> </a><input type="button" id="buttonId0" name="/home/hduser/Pictures/download-9.jpg" value="Delete" onclick="delete_file('/home/hduser/Pictures/download-9.jpg ');"/><a href="" ><img src='/home/hduser/Pictures/vetstreet.brightspotcdn.com.jpeg' width="400" height="400"/> </a><input type="button" id="buttonId1" name="/home/hduser/Pictures/vetstreet.brightspotcdn.com.jpeg" value="Delete" onclick="delete_file('/home/hduser/Pictures/vetstreet.brightspotcdn.com.jpeg ');"/></body></html>

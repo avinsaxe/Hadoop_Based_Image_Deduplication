@@ -25,8 +25,31 @@ class ImageShow:
     def write_to_html(self):
         f = open(self.path, 'w')
         message = """<html>
-        <head></head>
-        <body><p>Duplicate Images. Pick and Delete <p>"""+self.images_html_text+"""</body></html>"""
+        <head>
+        
+        
+        <script>
+        
+           
+            function toCelsius(f) {
+               return (5/9) * (f-32);
+            }
+            function delete_file(file_name){
+                var r = confirm("Go to the path "+file_name +" and delete");
+                if(r == true)
+                {
+                   // FileInfo objFileInfo = new FileInfo(file_name);
+                   // if (objFileInfo.Exists)
+                    //{
+                     //   objFileInfo.Delete();
+                    //}
+                    
+                }
+            }
+
+        </script>
+        </head>
+        <body><h1>Duplicate Images. Pick and Delete </h1>"""+self.images_html_text+"""</body></html>"""
         f.write(message)
         f.close()
         self.__reset_dup_images_paths__()
@@ -34,10 +57,14 @@ class ImageShow:
     def get_content_from_file(self):
         f=open(self.images_file,'r')
         image_path=''
+        cnt=0
         for line in f.readlines():
-            image_path="""<img src='"""+line+"""' width="400" height="400"/>"""
-            self.images_html_text=self.images_html_text+image_path
+            line=line.strip("\n")
+            image_path="""<a href="" ><img src='"""+line+"""' width="400" height="400"/> </a>"""
+            button= '<input type="button" id="buttonId'+str(cnt)+'" ' +'name="'+line+'" value="'+'Delete"' +""" onclick="delete_file('"""+line+""" ');"/>"""
+            self.images_html_text=self.images_html_text+image_path+button
             print self.images_html_text
+            cnt=cnt+1
 
     def split_multiple_spaces(self, l=""):
             if l == "":

@@ -14,8 +14,9 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 sudo service mongod start
 sudo service mongod stop
 
- pip install pymongo
+pip install pymongo
 pip install --upgrade setuptools
+sudo pip install "django<2"
 
 
 sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
@@ -61,6 +62,8 @@ duplicate_search -find duplicates
 duplicate_search -add hashes_to_output
 
 
+
+python -m SimpleHTTPServer
 
 duplicate_search -db default
 duplicate_search -add /home/avinsaxe/Pictures
