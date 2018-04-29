@@ -1,7 +1,7 @@
 import json
 import os
 class OuputCreator:
-    def __init__(self,map_file='WordCount/new_data.txt',image_profiles='output/image_profiles.json'):
+    def __init__(self,map_file='/home/hduser/CloudComputing/CSCE689_Project2/WordCount/new_data.txt',image_profiles='output/image_profiles.json'):
         self.hashes=map_file
         self.image_profiles=image_profiles
         self.hash_file=None
@@ -33,6 +33,7 @@ class OuputCreator:
             self.hash_file = open(self.hashes, mode)
         except:
             print "Error opening file ", self.hashes
+            return
 
 
         for i in range(0,len(hashes_data)):
