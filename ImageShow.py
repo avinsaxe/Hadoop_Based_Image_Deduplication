@@ -3,7 +3,7 @@ import os
 from pprint import pprint
 import re
 from time import sleep
-
+import Constants
 import time
 from threading import Thread
 
@@ -17,12 +17,21 @@ class ImageShow:
         self.images_html_text=''
         self.hadoop_in='input/hashes.txt'
 
-    def setup_db(self,db_path=''):
-        self.db_path=db_path
-        if db_path=="":
-            self.images= DBConnection.connect()
+    def get_collection(self):
+        if self.db == None:
+            self.db = DBConnection.connect()
+        collection = self.db[Constants.collection]
+        return collection
+
+    def setup_db(self, db_path=''):
+        self.db_path = db_path
+        if db_path == "":
+            self.db = DBConnection.connect()
+            self.images = self.get_collection()
         else:
-            self.images= DBConnection.connect_db(db_path)
+            self.db = DBConnection.connect_db(db_path)
+            self.images = self.get_collection()
+        pprint(self.images)
 
         #pprint (self.images)
     def __reset_dup_images_paths__(self):

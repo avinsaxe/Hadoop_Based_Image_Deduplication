@@ -30,25 +30,22 @@ class OuputCreator:
         print hashes_data
         if hashes_data==None or len(hashes_data)==0:
             return
+
         try:
             self.hash_file = open(self.hashes, "w+")
+            self.hash_file.write("")
+            self.hash_file.close()
         except:
             print "Error opening file ", self.hashes
             return
-
-
+        try:
+            self.hash_file = open(self.hashes, "a+")
+        except:
+            print "Error opening file ", self.hashes
+            return
         for i in range(0,len(hashes_data)):
-            if i==0 :
-                self.hash_file.write(hashes_data[i]+"\n")
-                self.hash_file.close()
-                self.hash_file=None
-            elif self.hash_file==None:
-                try:
-                    self.hash_file = open(self.hashes, "a+")
-                except:
-                    print "Error opening file ", self.hashes
-                    return
                 self.hash_file.write(hashes_data[i] + "\n")
+
         if self.hash_file!=None:
             self.hash_file.close()
 

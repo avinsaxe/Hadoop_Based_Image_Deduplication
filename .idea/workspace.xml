@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3ba65a30-d0e1-4cd9-85eb-79790fc7ca3a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBConnection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageCounter/execute-wordcount.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ImageCounter/execute-wordcount.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageCounter/my_hadoop_data_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ImageCounter/my_hadoop_data_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageCounter/new_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ImageCounter/new_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageShow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OutputCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/OutputCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands" beforeDir="false" afterPath="$PROJECT_DIR$/commands" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dupSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/dupSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duplicate_images_path.txt" beforeDir="false" afterPath="$PROJECT_DIR$/duplicate_images_path.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/hadoop_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/hadoop_output.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="dupSearch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dupSearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="212" column="44" selection-start-line="212" selection-start-column="44" selection-end-line="212" selection-end-column="44" />
+            <state relative-caret-position="183">
+              <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
               <folding>
                 <element signature="e#8#17#0" expanded="true" />
               </folding>
@@ -54,11 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Constants.py">
+      <file leaf-file-name="ImageShow.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ImageShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="318">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +68,8 @@
       <file leaf-file-name="DBConnection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBConnection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="60">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -78,17 +80,8 @@
       <file leaf-file-name="commands" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="73" column="20" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_data.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ImageCounter/new_data.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="128" selection-start-line="1" selection-start-column="128" selection-end-line="1" selection-end-column="128" />
+            <state relative-caret-position="187">
+              <caret line="75" column="28" selection-start-line="75" selection-end-line="76" />
             </state>
           </provider>
         </entry>
@@ -102,16 +95,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new_data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ImageCounter/new_data.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="hadoop_output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output/hadoop_output.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="OutputCreator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OutputCreator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OutputCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="164">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -131,10 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parsing had</find>
-      <find>had</find>
-      <find>oepn</find>
-      <find>__reset_dup_images_paths__</find>
       <find>open</find>
       <find>time</find>
       <find>my_</find>
@@ -161,6 +159,10 @@
       <find>delete</find>
       <find>drop</find>
       <find>hadoop_file_path</find>
+      <find>setup_db</find>
+      <find>self.images</find>
+      <find>hash_file</find>
+      <find>write</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,15 +196,15 @@
         <option value="$PROJECT_DIR$/WordCount/execute-wordcount.sh" />
         <option value="$PROJECT_DIR$/Constants.py" />
         <option value="$PROJECT_DIR$/WordCount/Main.java" />
-        <option value="$PROJECT_DIR$/ImageShow.py" />
         <option value="$PROJECT_DIR$/Image_Processing.py" />
         <option value="$PROJECT_DIR$/hadoopMessageParser.py" />
-        <option value="$PROJECT_DIR$/OutputCreator.py" />
         <option value="$PROJECT_DIR$/DBConnection.py" />
         <option value="$PROJECT_DIR$/dupSearch.py" />
         <option value="$PROJECT_DIR$/commands" />
         <option value="$PROJECT_DIR$/ImageCounter/execute-wordcount.sh" />
         <option value="$PROJECT_DIR$/ImageCounter/new_data.txt" />
+        <option value="$PROJECT_DIR$/ImageShow.py" />
+        <option value="$PROJECT_DIR$/OutputCreator.py" />
       </list>
     </option>
   </component>
@@ -421,12 +423,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/OutputCreator.py</url>
-          <line>39</line>
+          <line>45</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ImageShow.py</url>
-          <line>78</line>
+          <line>87</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -592,16 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImageShow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="106" column="48" lean-forward="true" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -619,40 +611,10 @@
     <entry file="file://$PROJECT_DIR$/duplicate_images_path.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBConnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dupSearch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="212" column="44" selection-start-line="212" selection-start-column="44" selection-end-line="212" selection-end-column="44" />
-          <folding>
-            <element signature="e#8#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OutputCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -669,10 +631,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands">
+    <entry file="file://$PROJECT_DIR$/ImageCounter/execute-wordcount.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="73" column="20" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+        <state relative-caret-position="120">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImageShow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -683,17 +655,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImageCounter/execute-wordcount.sh">
+    <entry file="file://$PROJECT_DIR$/ImageCounter/new_data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImageCounter/new_data.txt">
+    <entry file="file://$PROJECT_DIR$/DBConnection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="128" selection-start-line="1" selection-start-column="128" selection-end-line="1" selection-end-column="128" />
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="75" column="28" selection-start-line="75" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dupSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+          <folding>
+            <element signature="e#8#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OutputCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
