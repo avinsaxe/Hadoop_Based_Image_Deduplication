@@ -20,6 +20,7 @@ from threading import Thread
 from time import sleep
 from hadoopMessageParser import *
 import threading
+from pymongo import MongoClient
 
 class Finder:
     def __init__(self):
@@ -28,6 +29,7 @@ class Finder:
         self.img_processing=ImageProcessing()
         self.output=OuputCreator()
         self.duplicate_images=[]
+
 
     def setup_db(self,db_path):
         self.db_path=db_path
@@ -198,6 +200,7 @@ class Finder:
     def reset_database(self):
         self.images.drop()
 
+
     def get_list_new_files(self,files):
         print "get List new files ",files
         if files==None or len(files)==0:
@@ -268,9 +271,6 @@ def main():
     print "duplicate_search -db <path>\n\n"
     finder = Finder()
 
-
-    #thread1 = threading.Thread(target=finder.__thread_poller__())
-    #thread2 = threading.Thread(target=finder.__thread_take_input__())
     thread1 = Thread(target=finder.__thread_poller__, args=())
     thread1.start()
     thread2 = Thread(target=finder.__thread_take_input__(), args=())

@@ -9,6 +9,7 @@ class ImageShow:
         self.images_file="duplicate_images_path.txt"
         self.hadoop_out='output/hadoop_output.txt'
         self.images_html_text=''
+        self.hadoop_in='input/hashes.txt'
 
     def setup_db(self,db_path=''):
         self.db_path=db_path
@@ -52,12 +53,13 @@ class ImageShow:
         <body><h1>Duplicate Images. Pick and Delete </h1>"""+self.images_html_text+"""</body></html>"""
         f.write(message)
         f.close()
-        self.__reset_dup_images_paths__()
+
 
     def get_content_from_file(self):
         f=open(self.images_file,'r')
         image_path=''
         cnt=0
+
         for line in f.readlines():
             line=line.strip("\n")
             image_path="""<a href="" ><img src='"""+line+"""' width="400" height="400"/> </a>"""
@@ -65,6 +67,9 @@ class ImageShow:
             self.images_html_text=self.images_html_text+image_path+button
             print self.images_html_text
             cnt=cnt+1
+
+
+
 
     def split_multiple_spaces(self, l=""):
             if l == "":
@@ -78,15 +83,18 @@ class ImageShow:
             self.setup_db()
         if self.images==None:
             return None
+        all_files=[]
         all_images = self.images.find()
         for image in all_images:
             if image["hash"]==hash:
-                return image
-        return None
+                all_files.append(image)
+        return all_files
 
     #Reads hadoop output file, checks for count>1 and extracts image paths from such hashes to add to the file duplicate_images_path.txt
     def write_duplicate_image_paths_to_file(self):
+        self.__reset_dup_images_paths__()
         f=open(self.hadoop_out,'r')
+        hashes_in_hadoop_out = []
         for line in f.readlines():
             splits=self.split_multiple_spaces(line)
             if len(splits)!=2:
@@ -95,13 +103,13 @@ class ImageShow:
             count=int(splits[1])
             print hash,"  ", count
             if count>1:
-                img=self.get_image_from_hash(hash)
-                print img
-                if img==None:
+                img_list=self.get_image_from_hash(hash)
+                #print img_list
+                if img_list==None or len(img_list)==0:
                     continue
-
-                f1=open(self.images_file,"a+")
-                f1.write(img["_id"]+"\n")
+                f1 = open(self.images_file, "a+")
+                for k in range(0,len(img_list)):
+                    f1.write(img_list[k]["_id"]+"\n")
                 f1.close()
         f.close()
 
