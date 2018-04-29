@@ -36,17 +36,21 @@ class Hadoop_Message_Parser:
 
     def parse_hadoop_output_file(self):
         print "\n\tParsing Hadoop Output File"
-        with open(self.hadoop_file_path) as fp:
-            lines=fp.readlines()
-            if lines==None:
-                return
-            for line in lines:
-                line=line.strip()
-                line_split=self.split_multiple_spaces(line)
-                if line==None or len(line_split)<2:
-                    continue
-                if int(line_split[1])>1:
-                    self.__duplicate_identified__(line_split[0])
+        fp= open(self.hadoop_file_path,"r")
+        lines=fp.readlines()
+
+        if lines==None:
+            return
+        for line in lines:
+            line=line.strip()
+            line_split=self.split_multiple_spaces(line)
+            if line==None or len(line_split)<2:
+                continue
+            if int(line_split[1])>1:
+                self.__duplicate_identified__(line_split[0])
+
+        fp.close()
+
         self.finder = Finder()
         print "Duplicate Hashes List ",self.duplicate_hashes
         if self.duplicate_hashes!=None and len(self.duplicate_hashes)>0:

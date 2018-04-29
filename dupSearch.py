@@ -202,7 +202,7 @@ class Finder:
 
     def is_in_db(self,file_id):
         if self.images==None:
-            self.setup_db()
+            self.setup_db("")
         if self.images.count({"_id":file_id})>0:
             return True
         return False
@@ -213,7 +213,6 @@ class Finder:
             client.drop_database(Constants.db)
 
     def reset_database(self):
-        print "Hehe"
         if self.images!=None:
             self.images.drop()
         print "Dropping db"
