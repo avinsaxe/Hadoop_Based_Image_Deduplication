@@ -27,6 +27,7 @@ class OuputCreator:
         self.hash_file.close()
 
     def write_hashes(self,hashes_data=[],mode="w+"):
+        print hashes_data
         if hashes_data==None or len(hashes_data)==0:
             return
         try:

@@ -29,20 +29,30 @@ class Finder:
         self.img_processing=ImageProcessing()
         self.output=OuputCreator()
         self.duplicate_images=[]
+        self.db=None
 
+    def get_collection(self):
+        if self.db==None:
+            self.db=DBConnection.connect()
+        collection = self.db[Constants.collection]
+        return collection
 
     def setup_db(self,db_path):
         self.db_path=db_path
         if db_path=="":
-            self.images= DBConnection.connect()
+            self.db=DBConnection.connect()
+            self.images=self.get_collection()
         else:
-            self.images= DBConnection.connect_db(db_path)
-
+            self.db= DBConnection.connect_db(db_path)
+            self.images = self.get_collection()
         pprint (self.images)
 
     def get_image_path_from_hash(self,hash=""):
         if self.images==None:
-            self.setup_db(self.db_path)
+            if self.db==None:
+                self.db=self.setup_db(self.db_path)
+            self.images = self.get_collection()
+
         if hash=="" or self.images==None:
             return None
         all_images=self.images.find()
@@ -198,9 +208,9 @@ class Finder:
         return False
 
     def drop_db(self):
-        db=DBConnection.connect_db()
-        if db!=None:
-            db.dropDatabase()
+        client = MongoClient('localhost', 27017)
+        if self.db!=None:
+            client.drop_database(Constants.db)
 
     def reset_database(self):
         print "Hehe"
@@ -281,10 +291,8 @@ def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
     finder = Finder()
-    print "1"
     thread1 = Thread(target=finder.__thread_poller__, args=())
     thread1.start()
-    print "2"
     thread2 = Thread(target=finder.__thread_take_input__(), args=())
     thread2.start()
 
