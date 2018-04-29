@@ -94,11 +94,11 @@ class Finder:
                     self.setup_db("")
                 else:
                     self.setup_db(db_path)
-            elif len(command_list)==3:
-                if command_list[1]=="-add" and command_list[2]=="hashes_to_output":
-                    self.add_hashes_to_file()
-
-                    # duplicate_search -add profiles_to_output
+            if len(command_list)==3:
+                if len(command_list) == 3 and command_list[1] == "-db" and command_list[2] == "reset":
+                    self.reset_database()
+                elif command_list[1]=="-add" and command_list[2]=="hashes_to_output":
+                    self.add_hashes_to_file()                    # duplicate_search -add profiles_to_output
                 elif command_list[1] == "-add" and command_list[2] == "profiles_to_output":
                     self.add_profiles_to_file()
                 elif command_list[1] == "-find":
@@ -125,8 +125,7 @@ class Finder:
                 delete_key=command_list[2]
                 delete_value=command_list[3]
                 self.delete(delete_key,delete_value)
-            elif len(command_list)==3 and command_list[1]=="-db" and command_list[2]=="reset":
-                self.reset_database()
+
 
 
     def find_duplicates(self):
@@ -192,12 +191,24 @@ class Finder:
             self.remove_image_from_db(file)
 
     def is_in_db(self,file_id):
+        if self.images==None:
+            self.setup_db()
         if self.images.count({"_id":file_id})>0:
             return True
         return False
 
+    def drop_db(self):
+        db=DBConnection.connect_db()
+        if db!=None:
+            db.dropDatabase()
+
     def reset_database(self):
-        self.images.drop()
+        print "Hehe"
+        if self.images!=None:
+            self.images.drop()
+        print "Dropping db"
+        self.drop_db()
+
 
 
     def get_list_new_files(self,files):
