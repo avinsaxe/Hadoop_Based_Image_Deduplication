@@ -52,3 +52,56 @@ Data across replicated data nodes has to be updated accordingly
 The storage of the images and their hash values in the cloud present data storage challenges (which system to store? How to optimize the storage capacity so that the disks in the three laptops are evenly utilized, etc?)
 Implementing an image hashing algorithm and using it to compare images with a similarity coefficient, i.e. hash of the images should be unique, but they should also be sufficiently representative of the image, in order to enable us to compute the similarity between two hashed images.
 
+
+## Instructions to RUN
+
+### The section outlines instructions to run the project using provided OVA file.
+
+1. Download OVA file from here OVA.
+
+2. Use Oracle VM to create three VMs for the cluster using Export appliance.
+
+3. In Terminal in hadoop-master use command ”su” and password “nimda” to log to root.
+
+4. Change IP address of slaves and master in /etc/hosts in all three machines. Use ifconfig to get IP address.
+
+5. Execute hdfs namenode -format in master.
+6. Execute './start-hadoop.sh' to start all hadoop processes in the cluster.
+
+7. start python poller:
+   'cd  /home/hduser/CloudComputing/CSCE689_Project2/ 
+   python2 dupSearch.py
+   start java server:
+   cd  /home/hduser/CloudComputing/CSCE689_Project2/ImageCounter
+   javac  Main.java
+   java  Main'
+   
+8. Start HTML updater thread:
+   'cd  /home/hduser/CloudComputing/CSCE689_Project2/'
+   python2 ImageShow.py
+
+9. Start HTML server:
+   sudo python -m SimpleHTTPServer 80    
+   Password: nimda
+   Upload Images for Image counter processing:
+   i. Switch to terminal in step 6(python poller)
+   Ii. Run following commands:
+   'duplicate_search -db reset   
+   duplicate_search -db default    
+   duplicate_search -show    
+   duplicate_search -add /home/hduser/Pictures   //to add images from the directory 
+   duplicate_search -add /home/hduser/Pictures1  //to add images from the directory 
+   duplicate_search -add hashes_to_output        //to start image-processing and give '           
+  
+  //images to Java application to process for Image counting
+
+10. From browser go to 
+    localhost:90/home/hduser/CloudComputing/CSCE689_Project2
+    to view duplicate images 
+
+    For more details instructions refer to section 5.3.1 in report
+
+Refer video for demo of the same : <video>
+
+
+
