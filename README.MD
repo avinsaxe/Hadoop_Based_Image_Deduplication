@@ -69,34 +69,55 @@ Implementing an image hashing algorithm and using it to compare images with a si
 6. Execute './start-hadoop.sh' to start all hadoop processes in the cluster.
 
 7. start python poller:
+   
    `cd  /home/hduser/CloudComputing/CSCE689_Project2/ 
+   
    python2 dupSearch.py
+   
    start java server:
+   
    cd  /home/hduser/CloudComputing/CSCE689_Project2/ImageCounter
+   
    javac  Main.java
+   
    java  Main`
    
+   
 8. Start HTML updater thread:
+   
    `cd  /home/hduser/CloudComputing/CSCE689_Project2/
+   
    python2 ImageShow.py`
 
 9. Start HTML server:
+   
    `sudo python -m SimpleHTTPServer 80    
+   
    Password: nimda
+   
    Upload Images for Image counter processing:
+   
    i. Switch to terminal in step 6(python poller)
+   
    Ii. Run following commands:
+   
    'duplicate_search -db reset   
+   
    duplicate_search -db default    
+   
    duplicate_search -show    
+   
    duplicate_search -add /home/hduser/Pictures   //to add images from the directory 
+   
    duplicate_search -add /home/hduser/Pictures1  //to add images from the directory 
+   
    duplicate_search -add hashes_to_output        //to start image-processing and give`
   
   //images to Java application to process for Image counting
 
 10. From browser go to 
-    `localhost:90/home/hduser/CloudComputing/CSCE689_Project2`
+   
+   `localhost:90/home/hduser/CloudComputing/CSCE689_Project2`
     to view duplicate images 
 
     For more details instructions refer to section 5.3.1 in report
