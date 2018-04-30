@@ -80,6 +80,9 @@ duplicate_search -dump all
 
 
 
+
+
+
 To remove scipy
 
 sudo apt-get remove python-numpy
