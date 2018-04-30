@@ -76,9 +76,8 @@ class Hadoop_Message_Parser:
 
 
     def poll_continuously(self):
+        print "Polling directory Started... ", self.hadoop_file_path
         while(True):
-            print "Polling directory ",self.hadoop_file_path
-
             time.sleep(self.interval)
             last_updated_timestamp= self.__get_last_update_timestamp__(self.hadoop_file_path)
             if last_updated_timestamp>self.prev_timestamp:

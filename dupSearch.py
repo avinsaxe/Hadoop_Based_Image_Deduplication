@@ -61,7 +61,6 @@ class Finder:
             return
         all_images=self.images.find()
         hashes=[]
-        print all_images[0]
         for i in range(0,all_images.count()):
             hashes.append(all_images[i]["hash"])
         self.output.write_hashes(hashes)
@@ -246,6 +245,7 @@ class Finder:
         self.hadoop_message_parser.poll_continuously()
 
     def __thread_take_input__(self):
+        print "Enter Commands"
         while True:
             cmd = raw_input("")
             if cmd == "-1":
@@ -270,9 +270,10 @@ def main():
     print "Enter Command"
     print "duplicate_search -db <path>\n\n"
     finder = Finder()
-
+    print "1"
     thread1 = Thread(target=finder.__thread_poller__, args=())
     thread1.start()
+    print "2"
     thread2 = Thread(target=finder.__thread_take_input__(), args=())
     thread2.start()
 

@@ -24,7 +24,7 @@ class ImageShow:
         else:
             self.images= DBConnection.connect_db(db_path)
 
-        pprint (self.images)
+        #pprint (self.images)
     def __reset_dup_images_paths__(self):
         f=open(self.images_file,'w')
         f.write("")
@@ -33,11 +33,7 @@ class ImageShow:
         f = open(self.path, 'w')
         message = """<html>
         <head>
-        
-        
         <script>
-        
-           
             function toCelsius(f) {
                return (5/9) * (f-32);
             }
@@ -45,11 +41,6 @@ class ImageShow:
                 var r = confirm("Go to the path "+file_name +" and delete");
                 if(r == true)
                 {
-                   // FileInfo objFileInfo = new FileInfo(file_name);
-                   // if (objFileInfo.Exists)
-                    //{
-                     //   objFileInfo.Delete();
-                    //}
                     
                 }
             }
@@ -72,7 +63,6 @@ class ImageShow:
             image_path="""<a href="" ><img src='"""+line+"""' width="400" height="400"/> </a>"""
             button= '<input type="button" id="buttonId'+str(cnt)+'" ' +'name="'+line+'" value="'+'Delete"' +""" onclick="delete_file('"""+line+""" ');"/>"""
             self.images_html_text=self.images_html_text+image_path+button
-            print self.images_html_text
             cnt=cnt+1
 
 
@@ -107,7 +97,7 @@ class ImageShow:
                 continue
             hash=splits[0]
             count=int(splits[1])
-            print hash,"  ", count
+            #print hash,"  ", count
             if count>1:
                 img_list=self.get_image_from_hash(hash)
                 #print img_list
@@ -126,7 +116,7 @@ class ImageShow:
 def main():
     imageshow=ImageShow()
     imageshow.setup_db()
-
+    print "Updating HTML file...Every 10 seconds"
     while True:
         imageshow.write_duplicate_image_paths_to_file()
         imageshow.get_content_from_file()

@@ -22,13 +22,14 @@ class Main{
      * If timestamp of NEW_DATA_FILE is updated the function starts hadoop processing.
      */
     static void poll() {
+    	System.out.println("Server is polling now...");
     	File newDataFile = new File(NEW_DATA_FILE);
     	while(true) {
-		System.out.println("Polling "+newDataFile.lastModified()+" and "+lastUpdateTimeStamp);
+		//System.out.println("Polling "+newDataFile.lastModified()+" and "+lastUpdateTimeStamp);
     		//check if timestamp of new_data.txt is updated. If yes! well fresh to brew! Let's do it!
 		long update_timestamp=newDataFile.lastModified();
     		if(update_timestamp > lastUpdateTimeStamp) {
-			    System.out.println("We have new data, lets invoke hadoop to process it...");
+			    System.out.println("We have new data, invoking hadoop to process it...");
     			runHadoop();
 			    lastUpdateTimeStamp=update_timestamp;
     			//updateNewDataFileTimeStamp();
