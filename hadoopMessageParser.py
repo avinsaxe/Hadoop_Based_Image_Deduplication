@@ -10,7 +10,7 @@ import re
 #needs to be one object in main file, with reset of duplicate_hashes everytime the data is displayed
 
 class Hadoop_Message_Parser:
-    def __init__(self,path="output/hadoop_output.txt"):
+    def __init__(self,path="/home/hduser/CloudComputing/CSCE689_Project2/output/hadoop_output.txt"):
         self.hadoop_file_path=path
         self.interval=3
         self.prev_timestamp=-1
@@ -38,11 +38,12 @@ class Hadoop_Message_Parser:
         print "\n\tParsing Hadoop Output File"
         with open(self.hadoop_file_path) as fp:
             lines=fp.readlines()
+            if lines==None:
+                return
             for line in lines:
                 line=line.strip()
                 line_split=self.split_multiple_spaces(line)
-                print line_split
-                if len(line_split)<2:
+                if line==None or len(line_split)<2:
                     continue
                 if int(line_split[1])>1:
                     self.__duplicate_identified__(line_split[0])
@@ -53,8 +54,6 @@ class Hadoop_Message_Parser:
             for i in range(0,len(self.duplicate_hashes)):
                 temp=self.finder.get_image_path_from_hash(self.duplicate_hashes[i])
                 self.repeat_images=self.repeat_images+temp
-
-
             self.duplicate_hashes=[]  #reset the duplicate hashes
         self.__thread_display_output_console__()
         self.repeat_images=[]

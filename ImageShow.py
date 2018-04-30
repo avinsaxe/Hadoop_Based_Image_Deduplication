@@ -2,6 +2,12 @@ import DBConnection
 import os
 from pprint import pprint
 import re
+from time import sleep
+
+import time
+from threading import Thread
+
+
 
 class ImageShow:
     def __init__(self):
@@ -94,7 +100,6 @@ class ImageShow:
     def write_duplicate_image_paths_to_file(self):
         self.__reset_dup_images_paths__()
         f=open(self.hadoop_out,'r')
-        hashes_in_hadoop_out = []
         for line in f.readlines():
             splits=self.split_multiple_spaces(line)
             if len(splits)!=2:
@@ -120,10 +125,12 @@ class ImageShow:
 def main():
     imageshow=ImageShow()
     imageshow.setup_db()
-    imageshow.write_duplicate_image_paths_to_file()
 
-    imageshow.get_content_from_file()
-    imageshow.write_to_html()
+    while True:
+        imageshow.write_duplicate_image_paths_to_file()
+        imageshow.get_content_from_file()
+        imageshow.write_to_html()
+        time.sleep(10)
 
 if __name__=="__main__":
     main()
