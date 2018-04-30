@@ -13,7 +13,7 @@ class Main{
     
     public static void main(String args[]){
     	createNewDataFile(NEW_DATA_FILE);
-    	updateNewDataFileTimeStamp(); //lets update local timestamp of new data file
+    	//updateNewDataFileTimeStamp(); //lets update local timestamp of new data file
     	poll(); //lets start polling
     }
 
@@ -28,10 +28,9 @@ class Main{
     		//check if timestamp of new_data.txt is updated. If yes! well fresh to brew! Let's do it!
 		long update_timestamp=newDataFile.lastModified();
     		if(update_timestamp > lastUpdateTimeStamp) {
-			System.out.println("Within if ");
-    			System.out.println("We have new data, lets invoke hadoop to process it...");
+			    System.out.println("We have new data, lets invoke hadoop to process it...");
     			runHadoop();
-			lastUpdateTimeStamp=update_timestamp;
+			    lastUpdateTimeStamp=update_timestamp;
     			//updateNewDataFileTimeStamp();
     		}
     		
@@ -56,7 +55,7 @@ class Main{
     static void runBashScript() {
     	String[] cmd = new String[]{"/bin/sh", HADOOP_BASH_SCRIPT_FILENAME};
     	try {
-			Process pr = Runtime.getRuntime().exec(cmd);
+    	    Process pr = Runtime.getRuntime().exec(cmd);
 			pr.waitFor();
 		} catch (IOException | InterruptedException e) {
 		}
