@@ -42,10 +42,10 @@ sudo service mongod start
 sudo service mongod stop
 
 
+duplicate_search -db reset
 duplicate_search -db default
 duplicate_search -add /home/avinsaxe/Pictures
-
-duplicate_search -add /home/hduser/Pictures
+duplicate_search -add /home/hduser/Pictures1
 
 duplicate_search -delete key value
 
