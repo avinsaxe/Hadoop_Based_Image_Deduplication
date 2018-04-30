@@ -1,3 +1,4 @@
+//ref: https://www.cloudera.com/documentation/other/tutorial/CDH5/topics/ht_wordcount3.html
 import java.io.IOException;
 import java.util.regex.Pattern;
 import org.apache.hadoop.conf.Configured;
