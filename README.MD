@@ -69,12 +69,12 @@ Implementing an image hashing algorithm and using it to compare images with a si
 6. Execute './start-hadoop.sh' to start all hadoop processes in the cluster.
 
 7. start python poller:
-   'cd  /home/hduser/CloudComputing/CSCE689_Project2/ 
+   '''cd  /home/hduser/CloudComputing/CSCE689_Project2/ 
    python2 dupSearch.py
    start java server:
    cd  /home/hduser/CloudComputing/CSCE689_Project2/ImageCounter
    javac  Main.java
-   java  Main'
+   java  Main'''
    
 8. Start HTML updater thread:
    'cd  /home/hduser/CloudComputing/CSCE689_Project2/'
